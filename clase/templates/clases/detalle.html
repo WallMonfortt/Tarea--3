@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalles de la Materia</title>
+</head>
+<body>
+  <h1>Detalles de la materia</h1>
+  <h3>Nombre:<small> {{clase.nombre}}</small></h3>
+  <h3>descripcion: <small>{{clase.descripcion}}</small></h3>
+  <h3>turno: <small>{{clase.turno}}</small></h3>
+  <h3>estudiantes: 
+    <small>
+      <ul>
+        <li *ngFor="let estudiante of clase.estudiantes">
+          {{estudiante.nombre}}
+        </li>        
+      </ul>
+    </small>
+
+  
+</body>
+</html>

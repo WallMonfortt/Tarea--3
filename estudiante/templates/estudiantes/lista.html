@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de estudiantes</title>
+</head>
+<body>
+  <h1>Estudiantes</h1>
+
+  <ul>
+    {% for estudiante in estudiantes %}
+      <li><a href="{{estudiante.id}}"> {{estudiante.nombre}} </a></li>
+    {% endfor %}
+  </ul>
+
+<h2>Agregar nuevo estudiante</h2>
+
+  <form method="POST">
+  
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="nombre">Nombre</label>
+      <input type="text" class="form-control" name="nombre" placeholder="Nombre" />
+      <label for="apellido">apellido</label>
+      <input type="text" class="form-control" name="apellido" placeholder="apellido" />
+      <label for="edad">edad</label>
+      <input type="text" class="form-control" name="edad" placeholder="edad" />
+      <label for="genero">genero</label>
+      <input type="text" class="form-control" name="genero" placeholder="genero" />
+      <label for="telefono">telefono</label>
+      <input type="text" class="form-control" name="telefono" placeholder="telefono" />
+      <label for="email">email</label>
+      <input type="text" class="form-control" name="email" placeholder="email" />
+    </div>
+    <div class="text-right">
+      <button type="submit" class="btn btn-primary">Guardar</button>
+    </div>
+  </form>
+</body>
+</html>

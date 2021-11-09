@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de clases</title>
+</head>
+<body>
+  <h1>Lista de clases</h1>
+
+  <ul>
+    {% for clase in clases %}
+      <li><a href="{{clase.id}}"> {{clase.nombre}} </a></li>
+    {% endfor %}
+  </ul>
+    </div>
+ 
+
+  <form method="POST">
+  
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="nombre">Nombre</label>
+      <input type="text" class="form-control" name="nombre" placeholder="Nombre" />
+      <label for="apellido">Descripción</label>
+      <input type="text" class="form-control" name="descripcion" placeholder="apellido" />
+      <label for="edad">turno</label>
+      <input type="text" class="form-control" name="turno" placeholder="turno" />
+      <label for="genero">Estudiantes</label>
+      <select class="form-control" name="estudiante" value='' multiple><option value="">Seleccione un estudiante</option>
+      {% for estudiante in estudiantes %}
+      <option value="{{estudiante.id}}">{{estudiante.nombre}}</option>
+      {% endfor %}
+      </select>
+    </div>
+    <div class="text-right">
+      <button type="submit" class="btn btn-primary">Guardar</button>
+    </div>
+  </form>
+</body>
+</html>
